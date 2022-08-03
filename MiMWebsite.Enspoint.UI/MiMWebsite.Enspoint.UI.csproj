@@ -4,6 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>3aa10b24-adbf-405d-acf0-352a193c8133</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,19 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\iransans\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\MIMWebsite.Services.csproj" />
+    <ProjectReference Include="..\MiMWebsite.Infra\MiMWebsite.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>
