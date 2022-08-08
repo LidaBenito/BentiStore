@@ -7,6 +7,5 @@ namespace MiMWebsite.Contracts.Products
 	{
 		List<Product> GetProducts();
 		Product GetById(int id);
-		Product GetProductByCategoryId(int id);
 	}
 }

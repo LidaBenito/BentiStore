@@ -8,8 +8,7 @@ namespace MiMWebsite.Contracts.Orders
     {
         List<Order> Orders();
         Order GetById(int id);
-        Order GetByPerson(int id);
-        List<Order> GetByDate(DateTime date);
+        List<Order> GetByDate(DateTime azDate,DateTime toDate);
 
 
     }

@@ -1,4 +1,5 @@
-﻿using MiMWebsite.Contracts.Categories;
+﻿using Microsoft.EntityFrameworkCore;
+using MiMWebsite.Contracts.Categories;
 using MiMWebsite.Domains.Categories;
 using MIMWebsite.Service.Common;
 
@@ -12,19 +13,10 @@ namespace MiMWebsite.Service.Categories
         {
             this.dbContext = dbContext;
         }
-        public List<Category> Categories()
-        {
-            throw new NotImplementedException();
-        }
+        public List<Category> Categories()=> dbContext.Categories.AsNoTracking().ToList();
 
-        public Category GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Category GetByProductId(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public Category GetById(int id) => dbContext.Categories.AsNoTracking().SingleOrDefault(categoryId => categoryId.Id == id);
+         
+       
     }
 }

@@ -1,9 +1,9 @@
-using Microsoft.EntityFrameworkCore;
-using MIMWebsite.Service.Common;
 
 var builder = WebApplication.CreateBuilder(args);
 var cnnBenti = builder.Configuration.GetConnectionString("BentiCnn");
 builder.Services.AddDbContext<BentiStoreDbContext>(options => options.UseSqlServer(cnnBenti));
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
+builder.Services.AddMediatR(typeof(Program));
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<CategoryCommandRepository, EFCategoryCommand>();
 builder.Services.AddScoped<CategoryQueryRepository, EFCategoryQuery>();

@@ -1,4 +1,5 @@
-﻿using MiMWebsite.Contracts.Persons;
+﻿using Microsoft.EntityFrameworkCore;
+using MiMWebsite.Contracts.Persons;
 using MiMWebsite.Domains.Persons;
 using MIMWebsite.Service.Common;
 
@@ -12,14 +13,9 @@ namespace MiMWebsite.Service.Persons
         {
             this.dbContext = dbContext;
         }
-        public Person GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Person> People()
-        {
-            throw new NotImplementedException();
-        }
+        public Person GetById(int id)=>dbContext.People.AsNoTracking().SingleOrDefault(personId => personId.Id == id);
+     
+        public List<Person> People()=> dbContext.People.AsNoTracking().ToList();
+     
     }
 }

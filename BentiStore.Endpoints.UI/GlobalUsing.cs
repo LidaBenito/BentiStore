@@ -8,4 +8,4 @@ global using MIMWebsite.Service.Common ;
 global using Microsoft.EntityFrameworkCore;
 global using MiMWebsite.Contracts.Categories;
 global using MiMWebsite.Contracts.Orders;
-
+global using MediatR;
