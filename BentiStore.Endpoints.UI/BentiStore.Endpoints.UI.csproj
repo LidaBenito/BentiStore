@@ -16,10 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\MIMWebsite.Services.csproj" />
     <ProjectReference Include="..\MiMWebsite.Contracts\MiMWebsite.Contracts.csproj" />
     <ProjectReference Include="..\MiMWebsite.Domains\MiMWebsite.Core.csproj" />
     <ProjectReference Include="..\MiMWebsite.Infra\MiMWebsite.Infra.csproj" />
+    <ProjectReference Include="..\MIMWebsite.Service\MIMWebsite.Service.csproj" />
   </ItemGroup>
 
 </Project>

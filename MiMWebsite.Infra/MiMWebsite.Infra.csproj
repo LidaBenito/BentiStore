@@ -41,17 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categories\CategoryCommand.cs" />
-    <Compile Include="Categories\CategoryQuery.cs" />
-    <Compile Include="Orders\OrderCommand.cs" />
-    <Compile Include="Orders\OrderQuery.cs" />
-    <Compile Include="Persons\PersonCommand.cs" />
-    <Compile Include="Persons\PersonQuery.cs" />
-    <Compile Include="Products\ProductCommand.cs" />
-    <Compile Include="Products\ProductQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Categories\" />
+    <Folder Include="Orders\" />
+    <Folder Include="Persons\" />
+    <Folder Include="Products\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MiMWebsite.Contracts\MiMWebsite.Contracts.csproj">
       <Project>{c696a059-70d0-4f2e-8faf-4180d35bae2a}</Project>

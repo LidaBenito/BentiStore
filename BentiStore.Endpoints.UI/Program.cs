@@ -1,11 +1,19 @@
 using Microsoft.EntityFrameworkCore;
-using MiMWebsite.Service.Common;
+using MIMWebsite.Service.Common;
 
 var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
 var cnnBenti = builder.Configuration.GetConnectionString("BentiCnn");
-builder.Services.AddDbContext<BentiDbContext>(options => options.UseSqlServer(cnnBenti));
+builder.Services.AddDbContext<BentiStoreDbContext>(options => options.UseSqlServer(cnnBenti));
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<CategoryCommandRepository, EFCategoryCommand>();
+builder.Services.AddScoped<CategoryQueryRepository, EFCategoryQuery>();
+builder.Services.AddScoped<OrderCommandRepository, EFOrderCommand>();
+builder.Services.AddScoped<OrderQueryRepository, EFOrderQuery>();
+builder.Services.AddScoped<PersonCommandRepository, EFPersonCommand>();
+builder.Services.AddScoped<PersonQueryRepository, EFPersonQuery>();
+builder.Services.AddScoped<ProductCommandReposirory, EFProductCommand>();
+builder.Services.AddScoped<ProductQueryRepository, EFProductQuery>();
+var app = builder.Build();
 app.UseDeveloperExceptionPage();
 app.UseStatusCodePages();
 app.MapGet("/", () => "Hello World!");
